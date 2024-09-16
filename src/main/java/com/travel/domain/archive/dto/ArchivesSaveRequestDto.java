@@ -63,7 +63,7 @@ public class ArchivesSaveRequestDto {
 
         LocalDate firstDayFormatted = null;
         LocalDate lastDayFormatted = null;
-        Boolean haveCompanionFormatted = false;
+        Boolean haveCompanionFormatted = null;
 
         if(firstDay != null){
             firstDayFormatted = LocalDate.parse(firstDay, formatter);

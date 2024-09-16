@@ -1,5 +1,6 @@
 package com.travel.domain.archive.entity;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.travel.domain.day.entity.Days;
 
 import com.travel.domain.emoji.entity.UserEmojiSelected;
@@ -50,7 +51,7 @@ public class Archives extends BaseTimeEntity {
     private EArchivingStyle archivingStyle;
 
     @Column()
-    private boolean haveCompanion;
+    private Boolean haveCompanion;
 
     @OneToMany(mappedBy = "archives")
     private List<Days> days = new ArrayList<>();
@@ -80,7 +81,7 @@ public class Archives extends BaseTimeEntity {
     @Builder
     public Archives(String title, boolean isShare, String coverImage,
                     Place place, LocalDate firstDay, LocalDate lastDay, EBudget budget, EPlaces places,
-                    EArchivingStyle archivingStyle, boolean haveCompanion, User user) {
+                    EArchivingStyle archivingStyle, Boolean haveCompanion, User user) {
         this.title = title;
         this.isShare = isShare;
         this.coverImage = coverImage;

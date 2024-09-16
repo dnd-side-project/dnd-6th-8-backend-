@@ -1,5 +1,6 @@
 package com.travel.domain.archive.dto;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.travel.domain.archive.entity.Archives;
 import com.travel.domain.archive.entity.EArchivingStyle;
 import com.travel.domain.archive.entity.EBudget;
@@ -37,7 +38,7 @@ public class ArchiveDetailResponseDto {
     private EBudget budget;
 
     @ApiModelProperty(value = "동행 여부", example = "함께")
-    private boolean haveCompanion;
+    private Boolean haveCompanion;
 
     @ApiModelProperty(value = "아카이브 공유", example = "true")
     private boolean isShare;
@@ -57,7 +58,7 @@ public class ArchiveDetailResponseDto {
         this.archivingStyle = entity.getArchivingStyle();
         this.budget = entity.getBudget();
         this.travelDuration = calculateDuration(entity);
-        this.haveCompanion = entity.isHaveCompanion();
+        this.haveCompanion = entity.getHaveCompanion();
         this.isShare = entity.isShare();
         this.countDaysFeeds = entity.countDaysFeedsOfArchive();
         this.coverImage = entity.getCoverImage();
